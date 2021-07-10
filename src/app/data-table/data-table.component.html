@@ -1,0 +1,30 @@
+<!-- Data passed to the mat-table component using the dataSource input.
+Mat-sort header is used to allow each column to be sorted in asc or desc order -->
+<div class="mat-elevation-z8 data-table">
+  <p>{{today | date:'fullDate'}} {{today | date:'h:mm:ss a'}}</p>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" (click)="openDialog()">Add Customer</button>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Barber</th>
+          <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dataSource">
+
+        <td>{{ row.name }}</td>
+        <td>{{ row.phone }}</td>
+        <td>{{ row.barber }}</td>
+        <td><div *ngIf="row.inchair">In Chair with {{row.barber}}</div><div *ngIf="!row.inchair"><button type="button" class="btn btn-info btn-lg" data-toggle="modal"  (click)="changeinchair(row)">Move to chair</button></div></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- Add a paginator -->
+
+</div>
