@@ -16,13 +16,14 @@ import { AppComponent } from "./app.component";
 import { MainNavComponent } from "./main-nav/main-nav.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { DataTableComponent } from "./data-table/data-table.component";
-import { CourseDialogComponent } from './course-dialog-component/course-dialog-component';
+import { CustomerDialogComponent } from './customer-dialog-component/customer-dialog-component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {  MatSelectModule } from '@angular/material/select';
 import {  MatInputModule  } from '@angular/material/input';
-import "@angular/compiler"
+import "@angular/compiler";
+import { ChangeBarberDialogComponent } from './change-barber-dialog/change-barber-dialog.component'
 @NgModule({
-  declarations: [AppComponent, MainNavComponent, DataTableComponent, CourseDialogComponent],
+  declarations: [AppComponent, MainNavComponent, DataTableComponent, CustomerDialogComponent, ChangeBarberDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -40,11 +41,11 @@ import "@angular/compiler"
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    
+
   ],
   exports: [ MatFormFieldModule, MatInputModule ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CourseDialogComponent]
+  entryComponents: [CustomerDialogComponent]
 })
 export class AppModule {}
